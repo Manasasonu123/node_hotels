@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose'); // Moved mongoose require to the top for better structure
+require('dotenv').config()
 
 const app = express(); // app has blueprint of express
 
@@ -8,6 +9,8 @@ const db=require('./db');  //imported db from db.js //responsible fo db connecti
 
 const bodyParser=require('body-parser');
 app.use(bodyParser.json())    //stored in req.body
+
+const PORT=process.env.PORT || 3000;  //FOR port as default port is 3000
 
 
 //Define a simple GET route
@@ -23,9 +26,9 @@ app.get('/', (req, res) => {
  //Use the routers
  app.use('/person',personRoutes)
  app.use('/menu',menuItemRoutes)
- 
+
 
 // Start the server
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Listening on port 3000');
 });
