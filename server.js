@@ -10,7 +10,7 @@ const db=require('./db');  //imported db from db.js //responsible fo db connecti
 const bodyParser=require('body-parser');
 app.use(bodyParser.json())    //stored in req.body
 
-const PORT=process.env.PORT || 3000;  //FOR port as default port is 3000
+const PORT=process.env.PORT || 3000;  //if machine(hosting place) is giving port then take it or else default is 3000
 
 
 //Define a simple GET route
