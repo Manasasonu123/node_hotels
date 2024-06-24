@@ -36,7 +36,8 @@ app.get('/',function(req, res) {
  const menuItemRoutes=require('./routes/menuItemroutes')
 
  //Use the routers
- app.use('/person',localAuthMiddleware,personRoutes)
+//  app.use('/person',localAuthMiddleware,personRoutes)
+app.use('/person',personRoutes)
  app.use('/menu',menuItemRoutes)
 
 
